@@ -342,7 +342,7 @@ RUN if [ ${INSTALL_IMAGEMAGICK} = true ]; then \
 #
 
 # locale FR
-apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y \
     libpq-dev \
     libmemcached-dev \
     curl \
