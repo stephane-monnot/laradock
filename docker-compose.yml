@@ -572,8 +572,8 @@ services:
     mailhog:
       build: ./mailhog
       ports:
-        - "1025:1025"
-        - "8025:8025"
+        - "${MAILHOG_SMTP_PORT}:1025"
+        - "${MAILHOG_HTTP_PORT}:8025"
       networks:
         - frontend
         - backend
