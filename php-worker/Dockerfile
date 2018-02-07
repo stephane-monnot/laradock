@@ -35,6 +35,16 @@ RUN if [ ${INSTALL_PGSQL} = true ]; then \
 RUN rm /var/cache/apk/* \
     && mkdir -p /var/www
 
+#####################################
+# ZipArchive:
+#####################################
+
+ARG INSTALL_ZIP_ARCHIVE=false
+RUN if [ ${INSTALL_ZIP_ARCHIVE} = true ]; then \
+    # Install the zip extension
+    docker-php-ext-install zip \
+;fi
+
 #
 #--------------------------------------------------------------------------
 # Optional Supervisord Configuration
